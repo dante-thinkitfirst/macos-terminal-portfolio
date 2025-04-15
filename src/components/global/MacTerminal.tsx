@@ -163,7 +163,10 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
         }),
       });
 
-      if (!response.ok) throw new Error("Failed to get response");
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || "Failed to get response");
+      }
 
       const data = await response.json();
 
@@ -175,6 +178,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
         ],
       }));
     } catch (error) {
+      console.error("Chat error:", error);
       setChatHistory((prev) => ({
         ...prev,
         messages: [
@@ -182,7 +186,9 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
           {
             role: "assistant",
             content:
-              "I'm having trouble processing that. Please email me at dantesilvacodes@gmail.com",
+              error instanceof Error
+                ? error.message
+                : "I'm having trouble processing that. Please try again later.",
           },
         ],
       }));

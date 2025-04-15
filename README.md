@@ -54,6 +54,30 @@ An interactive macOS-inspired portfolio theme for Astro, featuring an AI-powered
 5. Start the development server:
    `npm run dev`
 
+## Deployment
+
+### Vercel Deployment
+
+1. Push your code to a GitHub repository
+2. Import the repository in Vercel
+3. Configure environment variables in Vercel:
+   - Go to Project Settings > Environment Variables
+   - Add `OPENAI_API_KEY` with your OpenAI API key
+   - Select all environments (Production, Preview, Development)
+4. Deploy your project
+
+### Environment Variables
+
+For local development:
+
+- Create a `.env` file in the root directory
+- Add your OpenAI API key: `OPENAI_API_KEY=your_api_key_here`
+
+For production (Vercel):
+
+- Add the environment variable in Vercel dashboard
+- No need to commit the `.env` file to your repository
+
 ## Customization
 
 ### Personal Information
@@ -95,10 +119,6 @@ Update SEO metadata in:
 ### Sitemap
 
 The sitemap is automatically generated using @astrojs/sitemap. Configure in astro.config.mjs.
-
-## Deployment
-
-This theme is configured for deployment on Vercel. Update astro.config.mjs if you prefer a different platform.
 
 ## License
 
