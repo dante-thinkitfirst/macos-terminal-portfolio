@@ -1,7 +1,12 @@
 import { BsGithub, BsSpotify } from "react-icons/bs";
 import { IoIosMail, IoIosCall } from "react-icons/io";
+import { IoFolderOpenOutline } from "react-icons/io5";
 
-export default function MobileDock() {
+interface MobileDockProps {
+  onToggleProjects: () => void;
+}
+
+export default function MobileDock({ onToggleProjects }: MobileDockProps) {
   const handleEmailClick = () => {
     window.location.href = "mailto:dantesilvacodes@gmail.com";
   };
@@ -25,6 +30,15 @@ export default function MobileDock() {
             <IoIosCall size={60} className="text-white" />
           </div>
         </a>
+
+        <button
+          onClick={onToggleProjects}
+          className="flex flex-col items-center cursor-pointer"
+        >
+          <div className="w-18 h-18 bg-gradient-to-t from-blue-400 to-blue-300 rounded-2xl flex items-center justify-center">
+            <IoFolderOpenOutline size={55} className="text-white" />
+          </div>
+        </button>
 
         <button
           onClick={handleEmailClick}

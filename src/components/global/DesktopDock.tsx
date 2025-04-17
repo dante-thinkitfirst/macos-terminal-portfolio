@@ -3,8 +3,13 @@ import { BsGithub, BsSpotify, BsTerminal } from "react-icons/bs";
 import { IoIosMail } from "react-icons/io";
 import { VscVscode } from "react-icons/vsc";
 import { RiTerminalFill } from "react-icons/ri";
+import { IoFolderOpenOutline } from "react-icons/io5";
 
-export default function DesktopDock() {
+interface DesktopDockProps {
+  onToggleProjects: () => void;
+}
+
+export default function DesktopDock({ onToggleProjects }: DesktopDockProps) {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
 
   const handleEmailClick = () => {
@@ -54,6 +59,19 @@ export default function DesktopDock() {
               <VscVscode size={45} className="text-blue-500" />
             </div>
             {hoveredIcon === "vscode" && <Tooltip text="Launch VS Code" />}
+          </button>
+
+          {/* Projects */}
+          <button
+            onClick={onToggleProjects}
+            onMouseEnter={() => setHoveredIcon("projects")}
+            onMouseLeave={() => setHoveredIcon(null)}
+            className="relative"
+          >
+            <div className="w-14 h-14 bg-gradient-to-t from-blue-400 to-blue-300 rounded-xl flex items-center justify-center shadow-lg">
+              <IoFolderOpenOutline size={42} className="text-white" />
+            </div>
+            {hoveredIcon === "projects" && <Tooltip text="My Projects" />}
           </button>
 
           {/* Email */}
