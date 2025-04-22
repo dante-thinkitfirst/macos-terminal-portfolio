@@ -191,12 +191,16 @@ export default function ProjectModal({
           onMouseDown={handleToolbarMouseDown}
           onTouchStart={handleToolbarTouchStart}
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 group">
             <button
               onClick={handleClose}
-              className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600 transition-colors"
+              className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600 transition-colors relative"
               aria-label="Close window"
-            />
+            >
+              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 text-[8px] text-gray-700 font-bold select-none transition-opacity">
+                ✕
+              </span>
+            </button>
             <div className="w-3 h-3 bg-yellow-500 rounded-full" />
             <div className="w-3 h-3 bg-green-500 rounded-full" />
           </div>

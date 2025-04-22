@@ -183,12 +183,16 @@ export default function Projects({ onClose }: ProjectsProps) {
           onMouseDown={handleToolbarMouseDown}
           onTouchStart={handleToolbarTouchStart}
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 group">
             {onClose ? (
               <button
                 onClick={onClose}
-                className="w-3 h-3 bg-red-500 hover:bg-red-600 transition-colors rounded-full"
-              />
+                className="w-3 h-3 bg-red-500 hover:bg-red-600 transition-colors rounded-full relative"
+              >
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 text-[8px] text-gray-700 font-bold select-none transition-opacity">
+                  ✕
+                </span>
+              </button>
             ) : (
               <div className="w-3 h-3 bg-red-500 rounded-full" />
             )}
