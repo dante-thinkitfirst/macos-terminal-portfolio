@@ -49,7 +49,7 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
 
       {/* Projects Finder Window */}
       {showProjects && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-5xl pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[64%] pointer-events-none">
           <div className="pointer-events-auto">
             <Projects onClose={toggleProjects} />
           </div>

@@ -167,7 +167,7 @@ export default function Projects({ onClose }: ProjectsProps) {
   return (
     <div
       ref={projectsRef}
-      className="w-full max-w-5xl shadow-2xl transform will-change-transform select-none"
+      className="w-full shadow-2xl transform will-change-transform select-none"
       style={{
         transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
         WebkitTransform: `translate3d(${position.x}px, ${position.y}px, 0)`,
@@ -204,27 +204,27 @@ export default function Projects({ onClose }: ProjectsProps) {
         </div>
 
         {/* Projects grid */}
-        <div className="p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div className="p-4 sm:p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
           {projectsData.map((project) => (
             <button
               key={project.id}
               onClick={() => openProjectModal(project)}
               className="flex flex-col items-center group focus:outline-none"
             >
-              <div className="w-16 h-16 mb-2 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 mb-2 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105">
                 {project.icon ? (
                   <img
                     src={project.icon}
                     alt={project.title}
-                    className="w-10 h-10 object-contain"
+                    className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                   />
                 ) : (
-                  <div className="w-10 h-10 bg-blue-500 rounded-md flex items-center justify-center text-white font-bold">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-md flex items-center justify-center text-white font-bold">
                     {project.title.charAt(0)}
                   </div>
                 )}
               </div>
-              <span className="text-sm text-center text-gray-700 dark:text-gray-300 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
+              <span className="text-xs sm:text-sm text-center text-gray-700 dark:text-gray-300 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
                 {project.title.length > 15
                   ? `${project.title.slice(0, 12)}...`
                   : project.title}

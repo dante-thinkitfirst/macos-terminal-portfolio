@@ -171,7 +171,7 @@ export default function ProjectModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
       <div
         ref={modalRef}
-        className={`w-full max-w-4xl bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl 
+        className={`w-full mx-5 md:w-[90%] md:max-w-4xl bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl 
                    transform will-change-transform select-none ${
                      isClosing ? "scale-95 opacity-0" : "scale-100 opacity-100"
                    }`}
@@ -209,11 +209,11 @@ export default function ProjectModal({
         {/* Main Content */}
         <div className="flex flex-col md:flex-row">
           {/* Left side: Project image */}
-          <div className="w-full md:w-1/2 h-64 md:h-auto">
+          <div className="w-full md:w-1/2 h-64 md:h-auto flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-[85%] h-[85%] object-contain"
             />
           </div>
 
