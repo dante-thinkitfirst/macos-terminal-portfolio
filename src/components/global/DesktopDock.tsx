@@ -26,7 +26,7 @@ export default function DesktopDock({ onToggleProjects }: DesktopDockProps) {
 
   const handleSpotifyClick = () => {
     window.open(
-      "https://open.spotify.com/playlist/3OEaBjNVglYxPcGxqNR66Q",
+      "https://open.spotify.com/playlist/4EYQeO5HAUbP7zxrJgvhFX?si=4f3cf70ed30249ad",
       "_blank"
     );
   };
