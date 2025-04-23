@@ -239,9 +239,10 @@ export default function ProjectModal({
               ))}
             </div>
 
-            <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
-              {project.description}
-            </p>
+            <p
+              className="text-gray-600 dark:text-gray-300 mb-6 flex-grow"
+              dangerouslySetInnerHTML={{ __html: project.description }}
+            ></p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 mt-auto">
