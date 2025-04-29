@@ -30,7 +30,7 @@ const projectsData = [
     description:
       "A professional website built for attorney Paul J. Susko, showcasing his legal services, experience, and credentials. Designed with clean layouts and optimized for accessibility, the site serves as a digital brochure for prospective clients and includes direct contact options.",
     techStack: ["WordPress", "PHP", "ACF", "JavaScript", "HTML", "CSS"],
-    liveUrl: "https://ksslawfirm.com",
+    liveUrl: "https://paulsuskolaw.com",
     icon: "/images/icons/wordpress-icon.svg",
   },
   {
