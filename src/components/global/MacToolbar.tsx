@@ -8,7 +8,11 @@ import {
 } from "react-icons/io5";
 import { VscVscode } from "react-icons/vsc";
 
-export default function MacToolbar() {
+interface MacToolbarProps {
+  onToggleProjects: () => void;
+}
+
+export default function MacToolbar({ onToggleProjects }: MacToolbarProps) {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
   useEffect(() => {
@@ -70,7 +74,12 @@ export default function MacToolbar() {
           <span className="cursor-default">File</span>
           <span className="cursor-default">Edit</span>
           <span className="cursor-default">View</span>
-          <span className="cursor-default">Go</span>
+          <span
+            className="cursor-pointer hover:text-blue-300 transition-colors"
+            onClick={onToggleProjects}
+          >
+            Projects
+          </span>
           <span className="cursor-default">Window</span>
           <span className="cursor-default">Help</span>
         </div>
