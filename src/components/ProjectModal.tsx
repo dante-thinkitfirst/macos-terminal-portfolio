@@ -171,7 +171,7 @@ export default function ProjectModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
       <div
         ref={modalRef}
-        className={`w-full mx-5 md:w-[90%] md:max-w-4xl bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl 
+        className={`w-[90%] mx-2 md:w-[90%] md:max-w-4xl bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl 
                    transform will-change-transform select-none ${
                      isClosing ? "scale-95 opacity-0" : "scale-100 opacity-100"
                    }`}
@@ -182,6 +182,7 @@ export default function ProjectModal({
           transition: isDragging
             ? "none"
             : "transform 0.2s ease-out, opacity 0.2s ease-out, scale 0.2s ease-out",
+          maxHeight: "calc(100vh - 4rem)",
         }}
       >
         {/* Window Controls */}
@@ -204,14 +205,14 @@ export default function ProjectModal({
             <div className="w-3 h-3 bg-yellow-500 rounded-full" />
             <div className="w-3 h-3 bg-green-500 rounded-full" />
           </div>
-          <div className="flex-1 text-center text-sm text-gray-600 dark:text-gray-300 font-medium select-none">
+          <div className="flex-1 text-center text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-medium select-none">
             {project.title}
           </div>
-          <div className="w-16"></div>
+          <div className="w-16 hidden sm:block"></div>
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row overflow-y-auto max-h-[calc(100vh-8rem)]">
           {/* Left side: Project image */}
           <div className="w-full md:w-1/2 h-64 md:h-auto flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
             <img
