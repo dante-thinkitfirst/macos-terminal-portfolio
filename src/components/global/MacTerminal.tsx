@@ -63,17 +63,20 @@ export default function MacTerminal() {
   }, [placeholder, isDeleting, currentPlaceholderIndex]);
 
   // Customize this welcome message with your information
-  const welcomeMessage = `Welcome to My Portfolio
-
-Name: Dante Silva
-Role: Full Stack Developer
-Location: Cherry Hill, NJ
-
-Contact: dantesilvacodes@gmail.com
-GitHub: github.com/dante-thinkitfirst
-
-Ask me anything!
-`;
+  const welcomeMessage = `
+  Welcome to Dante's Portfolio
+  
+  Name: Dante Silva
+  Role: Full-Stack Web Developer
+  Focus: Shopify | React | WordPress | Analytics
+  Location: Cherry Hill, NJ
+  
+  GitHub: github.com/dante-thinkitfirst
+  Email: dantesilvacodes@gmail.com
+  LinkedIn: https://www.linkedin.com/in/dante-silva-51b177b9
+  
+  > Ask me anything to explore my work.
+  `;
 
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString("en-US", {
